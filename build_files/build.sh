@@ -28,6 +28,3 @@ git clone https://github.com/keylase/nvidia-patch
 cd nvidia-patch
 ./patch.sh -d $(rpm -q --qf '%{VERSION}\n' nvidia-driver)
 ./patch-fbc.sh -d $(rpm -q --qf '%{VERSION}\n' nvidia-driver)
-
-./patch.sh -f -d $(rpm -q --qf '%{VERSION}\n' nvidia-driver)
-./patch-fbc.sh -f -d $(rpm -q --qf '%{VERSION}\n' nvidia-driver)
