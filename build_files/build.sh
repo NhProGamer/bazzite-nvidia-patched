@@ -26,8 +26,8 @@ set -ouex pipefail
 cd /tmp
 git clone https://github.com/keylase/nvidia-patch
 cd nvidia-patch
-./patch.sh
-./patch-fbc.sh
+./patch.sh -d $(rpm -q --qf '%{VERSION}\n' nvidia-driver)
+./patch-fbc.sh -d $(rpm -q --qf '%{VERSION}\n' nvidia-driver)
 
-./patch.sh -f
-./patch-fbc.sh -f
+./patch.sh -f -d $(rpm -q --qf '%{VERSION}\n' nvidia-driver)
+./patch-fbc.sh -f -d $(rpm -q --qf '%{VERSION}\n' nvidia-driver)
